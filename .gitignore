@@ -1,0 +1,10 @@
+.env*
+*.key
+*.pem
+*.secret
+credentials*
+node_modules/
+.claude/*
+!.claude/commands/
+*.log
+tmp/
