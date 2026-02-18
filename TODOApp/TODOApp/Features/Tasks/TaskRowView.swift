@@ -3,6 +3,12 @@ import SwiftUI
 
 struct TaskRowView: View {
     let task: TaskItem
+    var onComplete: (() -> Void)? = nil
+    var onUncomplete: (() -> Void)? = nil
+
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    @State private var animateCheckmark: Bool = false
 
     private var isOverdue: Bool {
         guard let dueDate = task.dueDate, !task.isCompleted else { return false }
@@ -11,12 +17,28 @@ struct TaskRowView: View {
 
     var body: some View {
         HStack(spacing: 12) {
-            // Completion indicator (tap area expanded in Story 1.6)
-            Image(systemName: task.isCompleted ? "checkmark.circle.fill" : "circle")
-                .font(.title2)
-                .foregroundStyle(task.isCompleted ? Color.accentColor : .secondary)
-                .accessibilityLabel(task.isCompleted ? "Completed" : "Incomplete")
-                .accessibilityAddTraits(.isButton)
+            // Completion button — tappable circle; tap does NOT propagate to row onTapGesture
+            Button {
+                if task.isCompleted {
+                    onUncomplete?()
+                } else {
+                    if let onComplete {
+                        if !reduceMotion {
+                            withAnimation(.spring(response: 0.3, dampingFraction: 0.6)) {
+                                animateCheckmark = true
+                            }
+                        }
+                        onComplete()
+                    }
+                }
+            } label: {
+                Image(systemName: task.isCompleted ? "checkmark.circle.fill" : "circle")
+                    .font(.title2)
+                    .foregroundStyle(task.isCompleted ? Color.accentColor : .secondary)
+                    .scaleEffect(animateCheckmark ? 1.25 : 1.0)
+            }
+            .accessibilityLabel(task.isCompleted ? "Mark incomplete" : "Mark complete")
+            .buttonStyle(.plain)
 
             VStack(alignment: .leading, spacing: 2) {
                 Text(task.title)
@@ -38,6 +60,9 @@ struct TaskRowView: View {
             Spacer()
         }
         .padding(.vertical, 4)
+        .onChange(of: task.isCompleted) { _, _ in
+            animateCheckmark = false
+        }
         .accessibilityElement(children: .combine)
         .accessibilityLabel(accessibilityLabel)
         .accessibilityHint("Tap to open task details")

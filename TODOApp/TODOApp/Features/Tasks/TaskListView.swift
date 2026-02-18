@@ -13,7 +13,7 @@ struct TaskListView: View {
     )
     private var tasks: [TaskItem]
 
-    @State private var viewModel = TaskListViewModel()
+    @State private var viewModel: TaskListViewModel?
 
     var body: some View {
         Group {
@@ -22,9 +22,27 @@ struct TaskListView: View {
             } else {
                 List {
                     ForEach(tasks) { task in
-                        TaskRowView(task: task)
-                            .onTapGesture {
-                                coordinator.navigateTo(taskID: task.id)
+                        TaskRowView(task: task, onComplete: {
+                            Task { @MainActor in
+                                await viewModel?.completeTask(task)
+                            }
+                        }, onUncomplete: {
+                            Task { @MainActor in
+                                await viewModel?.uncompleteTask(task)
+                            }
+                        })
+                        .onTapGesture {
+                            coordinator.navigateTo(taskID: task.id)
+                        }
+                        .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                                Button(role: .destructive) {
+                                    Task { @MainActor in
+                                        await viewModel?.deleteTask(task)
+                                    }
+                                } label: {
+                                    Label("Delete", systemImage: "trash")
+                                }
+                                .accessibilityLabel("Delete task")
                             }
                     }
                 }
@@ -32,13 +50,13 @@ struct TaskListView: View {
             }
         }
         .navigationTitle("Inbox")
-        .navigationDestination(for: UUID.self) { _ in
-            // TaskDetailView added in Story 1.4
-            Text("Task Detail — Story 1.4")
+        .navigationDestination(for: UUID.self) { taskID in
+            if let task = tasks.first(where: { $0.id == taskID }) {
+                TaskDetailView(task: task, modelContainer: modelContext.container)
+            }
         }
         .sheet(isPresented: Bindable(coordinator).isShowingAddTask) {
-            // AddTaskView added in Story 1.4
-            Text("Add Task — Story 1.4")
+            AddTaskView(modelContainer: modelContext.container)
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
@@ -50,10 +68,18 @@ struct TaskListView: View {
                 }
             }
         }
-        .alert("Error", isPresented: Bindable(viewModel).showError) {
+        .task {
+            if viewModel == nil {
+                viewModel = TaskListViewModel(modelContainer: modelContext.container)
+            }
+        }
+        .alert("Error", isPresented: Binding(
+            get: { viewModel?.showError ?? false },
+            set: { viewModel?.showError = $0 }
+        )) {
             Button("OK") {}
         } message: {
-            Text(viewModel.errorMessage)
+            Text(viewModel?.errorMessage ?? "")
         }
     }
 

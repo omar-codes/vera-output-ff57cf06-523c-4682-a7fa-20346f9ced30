@@ -45,15 +45,15 @@ development_status:
   1-1-xcode-project-initialization-and-target-configuration: review
   1-2-core-constants-app-entry-point-and-navigation-shell: review
   1-3-swiftdata-models-repositories-and-inbox-task-list-view: review
-  1-4-add-task-and-edit-task: backlog
-  1-5-delete-task: backlog
-  1-6-complete-task: backlog
-  1-7-uncomplete-task: backlog
+  1-4-add-task-and-edit-task: review
+  1-5-delete-task: review
+  1-6-complete-task: review
+  1-7-uncomplete-task: review
   epic-1-retrospective: optional
 
   # Epic 2: Due Dates, Reminders & Notifications
   epic-2: backlog
-  2-1-set-due-date-and-reminder-time-on-a-task: backlog
+  2-1-set-due-date-and-reminder-time-on-a-task: review
   2-2-local-notification-delivery: backlog
   2-3-mark-done-and-dismiss-from-notification-banner: backlog
   2-4-reschedule-notifications-after-offline-recovery: backlog

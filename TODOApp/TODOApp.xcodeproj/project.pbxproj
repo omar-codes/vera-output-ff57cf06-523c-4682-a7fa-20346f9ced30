@@ -41,6 +41,16 @@
 		A031 /* TODOAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A131 /* TODOAppTests.swift */; };
 		/* Story 1.3 — TODOAppTests Sources */
 		B212 /* TaskRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A212 /* TaskRepositoryTests.swift */; };
+		/* Story 1.4 — TODOApp Sources */
+		B300 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300 /* AddTaskView.swift */; };
+		B301 /* TaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A301 /* TaskDetailView.swift */; };
+		B302 /* TaskDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A302 /* TaskDetailViewModel.swift */; };
+		/* Story 1.4 — TODOAppTests Sources */
+		B303 /* TaskListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A303 /* TaskListViewModelTests.swift */; };
+		/* Story 2.1 — TODOApp Sources */
+		B400 /* NotificationPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A400 /* NotificationPermissionView.swift */; };
+		/* Story 2.1 — TODOAppTests Sources */
+		B401 /* NotificationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A401 /* NotificationServiceTests.swift */; };
 		/* TODOAppUITests */
 		A041 /* TODOAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A141 /* TODOAppUITests.swift */; };
 /* End PBXBuildFile section */
@@ -79,6 +89,14 @@
 		A210 /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
 		A211 /* TaskRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRowView.swift; sourceTree = "<group>"; };
 		A212 /* TaskRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepositoryTests.swift; sourceTree = "<group>"; };
+		/* Story 1.4 file references */
+		A300 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
+		A301 /* TaskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailView.swift; sourceTree = "<group>"; };
+		A302 /* TaskDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewModel.swift; sourceTree = "<group>"; };
+		A303 /* TaskListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModelTests.swift; sourceTree = "<group>"; };
+		/* Story 2.1 file references */
+		A400 /* NotificationPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPermissionView.swift; sourceTree = "<group>"; };
+		A401 /* NotificationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationServiceTests.swift; sourceTree = "<group>"; };
 		/* Story 1.3 — WidgetKit framework */
 		FWID1 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		/* Product references */
@@ -161,8 +179,17 @@
 			isa = PBXGroup;
 			children = (
 				D015 /* Tasks */,
+				D016 /* Notifications */,
 			);
 			path = Features;
+			sourceTree = "<group>";
+		};
+		D016 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				A400 /* NotificationPermissionView.swift */,
+			);
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 		D015 /* Tasks */ = {
@@ -171,6 +198,9 @@
 				A209 /* TaskListView.swift */,
 				A210 /* TaskListViewModel.swift */,
 				A211 /* TaskRowView.swift */,
+				A300 /* AddTaskView.swift */,
+				A301 /* TaskDetailView.swift */,
+				A302 /* TaskDetailViewModel.swift */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -260,8 +290,18 @@
 			children = (
 				A131 /* TODOAppTests.swift */,
 				A212 /* TaskRepositoryTests.swift */,
+				A303 /* TaskListViewModelTests.swift */,
+				D017 /* Notifications */,
 			);
 			path = TODOAppTests;
+			sourceTree = "<group>";
+		};
+		D017 /* Notifications (Tests) */ = {
+			isa = PBXGroup;
+			children = (
+				A401 /* NotificationServiceTests.swift */,
+			);
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 		D005 /* TODOAppUITests */ = {
@@ -407,6 +447,10 @@
 				B209 /* TaskListView.swift in Sources */,
 				B210 /* TaskListViewModel.swift in Sources */,
 				B211 /* TaskRowView.swift in Sources */,
+				B300 /* AddTaskView.swift in Sources */,
+				B301 /* TaskDetailView.swift in Sources */,
+				B302 /* TaskDetailViewModel.swift in Sources */,
+				B400 /* NotificationPermissionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +477,8 @@
 			files = (
 				A031 /* TODOAppTests.swift in Sources */,
 				B212 /* TaskRepositoryTests.swift in Sources */,
+				B303 /* TaskListViewModelTests.swift in Sources */,
+				B401 /* NotificationServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

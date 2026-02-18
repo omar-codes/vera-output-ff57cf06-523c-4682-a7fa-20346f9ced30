@@ -72,6 +72,23 @@ struct TaskRepositoryTests {
         let remaining = try await repo.fetchTasks(in: nil)
         #expect(remaining.count == 0)
     }
+
+    @Test func updateTaskSetsModifiedAt() async throws {
+        let container = try makeContainer()
+        let repo = TaskRepository(modelContainer: container)
+
+        let task = try await repo.createTask(title: "Original Title", listID: nil)
+        let originalModifiedAt = task.modifiedAt
+
+        // Small delay to ensure modifiedAt changes
+        try await Task.sleep(nanoseconds: 10_000_000)
+
+        task.title = "Updated Title"
+        try await repo.updateTask(task)
+
+        #expect(task.title == "Updated Title")
+        #expect(task.modifiedAt > originalModifiedAt)
+    }
 }
 
 @Suite("ListRepository")
