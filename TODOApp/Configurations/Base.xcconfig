@@ -1,0 +1,8 @@
+// Configurations/Base.xcconfig
+// Shared build settings for all targets and configurations
+
+SWIFT_VERSION = 6
+SWIFT_STRICT_CONCURRENCY = complete
+IPHONEOS_DEPLOYMENT_TARGET = 17.0
+TARGETED_DEVICE_FAMILY = 1,2
+ENABLE_TESTABILITY = YES

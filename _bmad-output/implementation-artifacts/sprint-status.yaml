@@ -1,0 +1,102 @@
+# generated: 2026-02-18
+# project: workspace
+# project_key: NOKEY
+# tracking_system: file-system
+# story_location: /workspace/_bmad-output/implementation-artifacts
+
+# STATUS DEFINITIONS:
+# ==================
+# Epic Status:
+#   - backlog: Epic not yet started
+#   - in-progress: Epic actively being worked on
+#   - done: All stories in epic completed
+#
+# Epic Status Transitions:
+#   - backlog → in-progress: Automatically when first story is created (via create-story)
+#   - in-progress → done: Manually when all stories reach 'done' status
+#
+# Story Status:
+#   - backlog: Story only exists in epic file
+#   - ready-for-dev: Story file created in stories folder
+#   - in-progress: Developer actively working on implementation
+#   - review: Ready for code review (via Dev's code-review workflow)
+#   - done: Story completed
+#
+# Retrospective Status:
+#   - optional: Can be completed but not required
+#   - done: Retrospective has been completed
+#
+# WORKFLOW NOTES:
+# ===============
+# - Epic transitions to 'in-progress' automatically when first story is created
+# - Stories can be worked in parallel if team capacity allows
+# - SM typically creates next story after previous one is 'done' to incorporate learnings
+# - Dev moves story to 'review', then runs code-review (fresh context, different LLM recommended)
+
+generated: 2026-02-18
+project: workspace
+project_key: NOKEY
+tracking_system: file-system
+story_location: /workspace/_bmad-output/implementation-artifacts
+
+development_status:
+  # Epic 1: Project Foundation & Core Task CRUD
+  epic-1: in-progress
+  1-1-xcode-project-initialization-and-target-configuration: review
+  1-2-core-constants-app-entry-point-and-navigation-shell: backlog
+  1-3-swiftdata-models-repositories-and-inbox-task-list-view: backlog
+  1-4-add-task-and-edit-task: backlog
+  1-5-delete-task: backlog
+  1-6-complete-task: backlog
+  1-7-uncomplete-task: backlog
+  epic-1-retrospective: optional
+
+  # Epic 2: Due Dates, Reminders & Notifications
+  epic-2: backlog
+  2-1-set-due-date-and-reminder-time-on-a-task: backlog
+  2-2-local-notification-delivery: backlog
+  2-3-mark-done-and-dismiss-from-notification-banner: backlog
+  2-4-reschedule-notifications-after-offline-recovery: backlog
+  epic-2-retrospective: optional
+
+  # Epic 3: List Organization
+  epic-3: backlog
+  3-1-create-custom-list-and-filter-by-list: backlog
+  3-2-rename-a-custom-list: backlog
+  3-3-delete-a-custom-list: backlog
+  3-4-move-a-task-to-a-different-list: backlog
+  3-5-reorder-tasks-within-a-list: backlog
+  epic-3-retrospective: optional
+
+  # Epic 4: Offline-First Persistence & iCloud Sync
+  epic-4: backlog
+  4-1-offline-first-local-persistence: backlog
+  4-2-icloud-multi-device-sync-and-conflict-resolution: backlog
+  epic-4-retrospective: optional
+
+  # Epic 5: Home Screen Widget
+  epic-5: backlog
+  5-1-widget-extension-target-and-small-medium-widget-display: backlog
+  5-2-widget-tap-to-open-deep-link: backlog
+  5-3-widget-timeline-refresh-on-task-state-change: backlog
+  epic-5-retrospective: optional
+
+  # Epic 6: Siri & Voice Capture (App Intents)
+  epic-6: backlog
+  6-1-siri-task-capture-via-app-intents: backlog
+  6-2-custom-siri-shortcut-phrase: backlog
+  epic-6-retrospective: optional
+
+  # Epic 7: First-Launch Onboarding
+  epic-7: backlog
+  7-1-zero-friction-first-launch-and-first-task-creation: backlog
+  7-2-widget-nudge-after-first-task: backlog
+  7-3-notification-permission-prompt-at-first-reminder: backlog
+  epic-7-retrospective: optional
+
+  # Epic 8: Appearance, Settings & App Store Readiness
+  epic-8: backlog
+  8-1-light-dark-mode-and-system-appearance: backlog
+  8-2-settings-view-and-icloud-sync-status: backlog
+  8-3-accessibility-audit-and-app-store-submission-readiness: backlog
+  epic-8-retrospective: optional
