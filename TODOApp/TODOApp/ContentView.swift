@@ -1,20 +1,17 @@
 import SwiftUI
-import SwiftData
 
 struct ContentView: View {
-    // Navigation shell implemented in Story 1.2
+    @Environment(AppCoordinator.self) private var coordinator
+
     var body: some View {
-        VStack {
-            Image(systemName: "checkmark.circle")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("TODOApp")
+        NavigationStack(path: Bindable(coordinator).navigationPath) {
+            TaskListView()
         }
-        .padding()
     }
 }
 
 #Preview {
     ContentView()
-        .modelContainer(for: [], inMemory: true)
+        .environment(AppCoordinator())
+        .modelContainer(for: [TaskItem.self, TaskList.self], inMemory: true)
 }

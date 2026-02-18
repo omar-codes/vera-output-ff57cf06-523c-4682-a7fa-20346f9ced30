@@ -43,8 +43,8 @@ development_status:
   # Epic 1: Project Foundation & Core Task CRUD
   epic-1: in-progress
   1-1-xcode-project-initialization-and-target-configuration: review
-  1-2-core-constants-app-entry-point-and-navigation-shell: backlog
-  1-3-swiftdata-models-repositories-and-inbox-task-list-view: backlog
+  1-2-core-constants-app-entry-point-and-navigation-shell: review
+  1-3-swiftdata-models-repositories-and-inbox-task-list-view: review
   1-4-add-task-and-edit-task: backlog
   1-5-delete-task: backlog
   1-6-complete-task: backlog

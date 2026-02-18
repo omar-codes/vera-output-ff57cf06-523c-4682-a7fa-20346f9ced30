@@ -10,7 +10,26 @@
 		/* TODOApp */
 		A001 /* TODOAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A101 /* TODOAppApp.swift */; };
 		A002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A102 /* ContentView.swift */; };
+		A005 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A106 /* AppCoordinator.swift */; };
+		A006 /* AppStorageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A107 /* AppStorageKeys.swift */; };
+		A007 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A108 /* AppConstants.swift */; };
+		A008 /* Logger+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A109 /* Logger+App.swift */; };
 		A003 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = A103 /* PrivacyInfo.xcprivacy */; };
+		/* Story 1.3 — TODOApp Sources */
+		B200 /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200 /* TaskItem.swift */; };
+		B201 /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A201 /* TaskList.swift */; };
+		B202 /* SchemaV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A202 /* SchemaV1.swift */; };
+		B203 /* TaskRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A203 /* TaskRepositoryProtocol.swift */; };
+		B204 /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A204 /* TaskRepository.swift */; };
+		B205 /* ListRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A205 /* ListRepositoryProtocol.swift */; };
+		B206 /* ListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A206 /* ListRepository.swift */; };
+		B207 /* WidgetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A207 /* WidgetService.swift */; };
+		B208 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A208 /* NotificationService.swift */; };
+		B209 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209 /* TaskListView.swift */; };
+		B210 /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A210 /* TaskListViewModel.swift */; };
+		B211 /* TaskRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A211 /* TaskRowView.swift */; };
+		/* Story 1.3 — WidgetKit framework */
+		FWBF1 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FWID1 /* WidgetKit.framework */; };
 		/* TODOAppWidgetExtension */
 		A011 /* TODOAppWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A111 /* TODOAppWidgetBundle.swift */; };
 		A012 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = A112 /* PrivacyInfo.xcprivacy (widget) */; };
@@ -20,6 +39,8 @@
 		A023 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = A123 /* PrivacyInfo.xcprivacy (intents) */; };
 		/* TODOAppTests */
 		A031 /* TODOAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A131 /* TODOAppTests.swift */; };
+		/* Story 1.3 — TODOAppTests Sources */
+		B212 /* TaskRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A212 /* TaskRepositoryTests.swift */; };
 		/* TODOAppUITests */
 		A041 /* TODOAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A141 /* TODOAppUITests.swift */; };
 /* End PBXBuildFile section */
@@ -30,6 +51,10 @@
 		A103 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		A104 /* TODOApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TODOApp.entitlements; sourceTree = "<group>"; };
 		A105 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A106 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		A107 /* AppStorageKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageKeys.swift; sourceTree = "<group>"; };
+		A108 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		A109 /* Logger+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+App.swift"; sourceTree = "<group>"; };
 		A111 /* TODOAppWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOAppWidgetBundle.swift; sourceTree = "<group>"; };
 		A112 /* PrivacyInfo.xcprivacy (widget) */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		A113 /* TODOAppWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TODOAppWidgetExtension.entitlements; sourceTree = "<group>"; };
@@ -40,6 +65,22 @@
 		A131 /* TODOAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOAppTests.swift; sourceTree = "<group>"; };
 		A141 /* TODOAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOAppUITests.swift; sourceTree = "<group>"; };
 		A150 /* Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
+		/* Story 1.3 file references */
+		A200 /* TaskItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItem.swift; sourceTree = "<group>"; };
+		A201 /* TaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskList.swift; sourceTree = "<group>"; };
+		A202 /* SchemaV1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaV1.swift; sourceTree = "<group>"; };
+		A203 /* TaskRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepositoryProtocol.swift; sourceTree = "<group>"; };
+		A204 /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
+		A205 /* ListRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRepositoryProtocol.swift; sourceTree = "<group>"; };
+		A206 /* ListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRepository.swift; sourceTree = "<group>"; };
+		A207 /* WidgetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetService.swift; sourceTree = "<group>"; };
+		A208 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		A209 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
+		A210 /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
+		A211 /* TaskRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRowView.swift; sourceTree = "<group>"; };
+		A212 /* TaskRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepositoryTests.swift; sourceTree = "<group>"; };
+		/* Story 1.3 — WidgetKit framework */
+		FWID1 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		/* Product references */
 		B001 /* TODOApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TODOApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B002 /* TODOAppWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TODOAppWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FWBF1 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,11 +147,91 @@
 			children = (
 				A101 /* TODOAppApp.swift */,
 				A102 /* ContentView.swift */,
+				A106 /* AppCoordinator.swift */,
 				A103 /* PrivacyInfo.xcprivacy */,
 				A104 /* TODOApp.entitlements */,
 				A105 /* Info.plist */,
+				D008 /* Core */,
+				D014 /* Features */,
 			);
 			path = TODOApp;
+			sourceTree = "<group>";
+		};
+		D014 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				D015 /* Tasks */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		D015 /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				A209 /* TaskListView.swift */,
+				A210 /* TaskListViewModel.swift */,
+				A211 /* TaskRowView.swift */,
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
+		D008 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D009 /* Utilities */,
+				D010 /* Models */,
+				D012 /* Repositories */,
+				D013 /* Services */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		D010 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A200 /* TaskItem.swift */,
+				A201 /* TaskList.swift */,
+				D011 /* DataMigration */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D011 /* DataMigration */ = {
+			isa = PBXGroup;
+			children = (
+				A202 /* SchemaV1.swift */,
+			);
+			path = DataMigration;
+			sourceTree = "<group>";
+		};
+		D012 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				A203 /* TaskRepositoryProtocol.swift */,
+				A204 /* TaskRepository.swift */,
+				A205 /* ListRepositoryProtocol.swift */,
+				A206 /* ListRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		D013 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A207 /* WidgetService.swift */,
+				A208 /* NotificationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D009 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A107 /* AppStorageKeys.swift */,
+				A108 /* AppConstants.swift */,
+				A109 /* Logger+App.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		D002 /* TODOAppWidgetExtension */ = {
@@ -137,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				A131 /* TODOAppTests.swift */,
+				A212 /* TaskRepositoryTests.swift */,
 			);
 			path = TODOAppTests;
 			sourceTree = "<group>";
@@ -268,6 +391,22 @@
 			files = (
 				A001 /* TODOAppApp.swift in Sources */,
 				A002 /* ContentView.swift in Sources */,
+				A005 /* AppCoordinator.swift in Sources */,
+				A006 /* AppStorageKeys.swift in Sources */,
+				A007 /* AppConstants.swift in Sources */,
+				A008 /* Logger+App.swift in Sources */,
+				B200 /* TaskItem.swift in Sources */,
+				B201 /* TaskList.swift in Sources */,
+				B202 /* SchemaV1.swift in Sources */,
+				B203 /* TaskRepositoryProtocol.swift in Sources */,
+				B204 /* TaskRepository.swift in Sources */,
+				B205 /* ListRepositoryProtocol.swift in Sources */,
+				B206 /* ListRepository.swift in Sources */,
+				B207 /* WidgetService.swift in Sources */,
+				B208 /* NotificationService.swift in Sources */,
+				B209 /* TaskListView.swift in Sources */,
+				B210 /* TaskListViewModel.swift in Sources */,
+				B211 /* TaskRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A031 /* TODOAppTests.swift in Sources */,
+				B212 /* TaskRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
