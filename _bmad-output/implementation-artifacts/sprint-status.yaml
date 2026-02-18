@@ -52,11 +52,11 @@ development_status:
   epic-1-retrospective: optional
 
   # Epic 2: Due Dates, Reminders & Notifications
-  epic-2: backlog
+  epic-2: in-progress
   2-1-set-due-date-and-reminder-time-on-a-task: review
-  2-2-local-notification-delivery: backlog
-  2-3-mark-done-and-dismiss-from-notification-banner: backlog
-  2-4-reschedule-notifications-after-offline-recovery: backlog
+  2-2-local-notification-delivery: review
+  2-3-mark-done-and-dismiss-from-notification-banner: review
+  2-4-reschedule-notifications-after-offline-recovery: review
   epic-2-retrospective: optional
 
   # Epic 3: List Organization

@@ -3,7 +3,9 @@ import SwiftData
 
 @main
 struct TODOAppApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @State private var coordinator = AppCoordinator()
+    @State private var networkMonitor = NetworkMonitor()
 
     let sharedModelContainer: ModelContainer = {
         let schema = Schema([
@@ -28,6 +30,15 @@ struct TODOAppApp: App {
         WindowGroup {
             ContentView()
                 .environment(coordinator)
+                .onAppear {
+                    // Pass coordinator reference to AppDelegate for notification tap routing
+                    appDelegate.coordinator = coordinator
+                    // Pass model container to AppDelegate for mark-done notification action (Story 2.3)
+                    appDelegate.modelContainer = sharedModelContainer
+                    // Inject container and start network monitoring for offline recovery (Story 2.4 — FR20)
+                    networkMonitor.modelContainer = sharedModelContainer
+                    networkMonitor.startMonitoring()
+                }
         }
         .modelContainer(sharedModelContainer)
         .onOpenURL { url in

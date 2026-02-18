@@ -51,6 +51,14 @@
 		B400 /* NotificationPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A400 /* NotificationPermissionView.swift */; };
 		/* Story 2.1 — TODOAppTests Sources */
 		B401 /* NotificationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A401 /* NotificationServiceTests.swift */; };
+		/* Story 2.2 — TODOApp Sources */
+		B500 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A500 /* AppDelegate.swift */; };
+		/* Story 2.2 — TODOAppTests Sources */
+		B501 /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A501 /* AppDelegateTests.swift */; };
+		/* Story 2.4 — TODOApp Sources */
+		B600 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A600 /* NetworkMonitor.swift */; };
+		/* Story 2.4 — TODOAppTests Sources */
+		B601 /* NetworkMonitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A601 /* NetworkMonitorTests.swift */; };
 		/* TODOAppUITests */
 		A041 /* TODOAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A141 /* TODOAppUITests.swift */; };
 /* End PBXBuildFile section */
@@ -97,6 +105,12 @@
 		/* Story 2.1 file references */
 		A400 /* NotificationPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPermissionView.swift; sourceTree = "<group>"; };
 		A401 /* NotificationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationServiceTests.swift; sourceTree = "<group>"; };
+		/* Story 2.2 file references */
+		A500 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A501 /* AppDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateTests.swift; sourceTree = "<group>"; };
+		/* Story 2.4 file references */
+		A600 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		A601 /* NetworkMonitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitorTests.swift; sourceTree = "<group>"; };
 		/* Story 1.3 — WidgetKit framework */
 		FWID1 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		/* Product references */
@@ -166,6 +180,7 @@
 				A101 /* TODOAppApp.swift */,
 				A102 /* ContentView.swift */,
 				A106 /* AppCoordinator.swift */,
+				A500 /* AppDelegate.swift */,
 				A103 /* PrivacyInfo.xcprivacy */,
 				A104 /* TODOApp.entitlements */,
 				A105 /* Info.plist */,
@@ -250,6 +265,7 @@
 			children = (
 				A207 /* WidgetService.swift */,
 				A208 /* NotificationService.swift */,
+				A600 /* NetworkMonitor.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -300,6 +316,8 @@
 			isa = PBXGroup;
 			children = (
 				A401 /* NotificationServiceTests.swift */,
+				A501 /* AppDelegateTests.swift */,
+				A601 /* NetworkMonitorTests.swift */,
 			);
 			path = Notifications;
 			sourceTree = "<group>";
@@ -451,6 +469,8 @@
 				B301 /* TaskDetailView.swift in Sources */,
 				B302 /* TaskDetailViewModel.swift in Sources */,
 				B400 /* NotificationPermissionView.swift in Sources */,
+				B500 /* AppDelegate.swift in Sources */,
+				B600 /* NetworkMonitor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +499,8 @@
 				B212 /* TaskRepositoryTests.swift in Sources */,
 				B303 /* TaskListViewModelTests.swift in Sources */,
 				B401 /* NotificationServiceTests.swift in Sources */,
+				B501 /* AppDelegateTests.swift in Sources */,
+				B601 /* NetworkMonitorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
